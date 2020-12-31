@@ -1,0 +1,13 @@
+
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+slmgr /skms kms8.msguides.com
+if it is don't working try using these urls:
+-kms9.msguides.com
+-kms6.msguides.com
+-kms5.msguides.com
+-kms4.msguides.com
+-kms3.msguides.com
+-kms2.msguides.com
+-kms1.msguides.com
+slmgr /ato
+shutdown /r

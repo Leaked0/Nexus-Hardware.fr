@@ -1,0 +1,109 @@
+
+[1:44 PM]
+
+[1:44 PM]
+
+[1:44 PM]
+
+[1:44 PM]
+
+[1:48 PM]
+Si vous avez ce message, c'est que le certificat a bien été installé !  
+
+Passons maintenant à la réduction de la latence !
+
+Lancez le logiciel 'Setup.exe' en tant qu'administrateur.
+
+[1:50 PM]
+Le logiciel se présente de cette façon, vous serez d'origine sur la section 'Mice' du logiciel.
+Nous ce qu'on veut, c'est voir tous nos périphériques connectés, car dans la section 'Mice', ils ne sont pas tous là.
+Pour ce faire, cliquez sur 'Mice' pour changer la section puis sélectionnez 'All' !(edited)
+
+[1:55 PM]
+Passons à l'installation du service !
+
+Pour ce faire, une fois dans la section 'All', cliquez sur 'Install Service' pour installer le service requis.
+
+
+07/23/2020
+Attention ! Maintenant, on passe à la réduction de la latence, suivez les informations suivantes bien attentivement au risque de bloquer le port USB auquel le périphérique est branché.
+
+Tout d'abord, vous ne devez cliquer que dans la section 'Child Name(s)' comme ci-dessous.
+Sélectionnez votre souris (reconnaissable grâce aux mots 'mouse' et 'HID') comme sur la capture d'écran (en bleu).
+Ensuite, cliquez sur 'Filter On Device' puis, pour être sûr que cela est fonctionné, cliquez sur 'Restart' afin de relancer votre périphérique.
+
+Si vous ne pouvez plus bouger votre souris pendant un instant, c'est normal. Si en revanche, la case devient rouge, c'est que cela a raté. Vous devrez donc débranchez votre souris et la brancher sur un autre port USB.
+Dans mon cas, cela a fonctionné (je peux à nouveau bouger ma souris après quelques secondes).(edited)
+
+
+07/23/2020
+Maintenant, il va encore falloir suivre les informations attentivement !
+
+Si les informations ci-dessus ont fonctionné, vous pouvez faire la suite.
+
+D'origine, le 'Rate' de vos périphériques est à 'Default'.
+Pour la souris, je recommande de le mettre à '1000Hz'
+
+[2:20 PM]
+Une fois fait, cliquez sur 'Restart' afin de relancer votre périphérique (souris).
+Si vous ne pouvez plus bouger votre souris pendant un instant, c'est normal. Si en revanche, la case devient rouge, c'est que cela a raté. Vous devrez donc débranchez votre souris et la brancher sur un autre port USB.
+Dans mon cas, cela a fonctionné (je peux à nouveau bouger ma souris après quelques secondes).
+
+
+07/23/2020
+Si tout à réussi, c'est bon ! Vous avez moins de latence sur votre souris !  
+
+Mais bon, la souris c'est bien, mais il y a aussi les autres périphériques !
+Prenons l'exemple du clavier, tout d'abord, je vous rappelle que vous devez seulement sélectionner votre périphérique dans la catégorie 'Child Name(s)' !
+Le clavier est reconnaissable grâce aux mots 'keyboard' et 'HID' (en bleu).
+Cochez ensuite 'Filter On Device' puis cliquez sur 'Restart' pour savoir si cela a bien fonctionné. Ensuite, choisissez le 'Rate' pour votre clavier (recommandé : 500) puis faites 'Restart'.
+
+[2:30 PM]
+Pour finir ! Si vous avez un microphone en USB, je vous conseille de le mettre à '125Hz' (même manipulation que précédemment).
+
+[2:31 PM]
+Et voilà ! Vous avez terminé. Vous pouvez fermer le logiciel !
+
+(Cette manipulation est définitive).
+
+07/23/2020
+Vous pouvez tout de même retourner en arrière en faisant la manipulation inverse.
+Si votre processeur est vraiment de mauvaise qualité/peu puissant, cette manipulation peut vous faire perdre des IPS.
+July 24, 2020
+
+07/24/2020
+Informations ! Certaines personnes ont un message d'erreur comme celui ci-dessous lors de l'application de 'Filter On Device'.
+
+Cela peut être dû à :
+
+Un antivirus/anti-cheat/la protection secure boot qui bloque l'installation du service.
+La plupart du temps, cela est dû à Secure boot. Pour le désactiver, vous devez vous rendre dans votre BIOS.(edited)
+
+
+68
+You do not have permission to send messages in this channel.
+
+
+
+
+
+
+
+
+
+
+
+
+https://cdn.discordapp.com/attachments/735816294057639956/735824625694408745/Screenshot_1.png
+https://cdn.discordapp.com/attachments/735816294057639956/735824639623692358/Screenshot_2.png
+https://cdn.discordapp.com/attachments/735816294057639956/735824652705726524/Screenshot_3.png
+https://cdn.discordapp.com/attachments/735816294057639956/735824679989673984/Screenshot_4.png
+https://cdn.discordapp.com/attachments/735816294057639956/735824702445977660/Screenshot_5.png
+https://cdn.discordapp.com/attachments/735816294057639956/735825580737691710/Screenshot_1.png
+https://cdn.discordapp.com/attachments/735816294057639956/735826204250341416/Screenshot_1.png
+https://cdn.discordapp.com/attachments/735816294057639956/735827550089248788/Screenshot_1.png
+https://cdn.discordapp.com/attachments/735816294057639956/735830537209511946/Screenshot_1.png
+https://cdn.discordapp.com/attachments/735816294057639956/735833391819391016/Screenshot_2.png
+https://cdn.discordapp.com/attachments/735816294057639956/735833732489150534/Screenshot_3.png
+https://cdn.discordapp.com/attachments/735816294057639956/735835642059030618/Screenshot_1.png
+https://cdn.discordapp.com/attachments/735816294057639956/735836129840070686/Screenshot_1.png

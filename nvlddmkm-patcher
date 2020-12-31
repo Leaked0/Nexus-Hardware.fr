@@ -1,0 +1,415 @@
+
+char * FUN_00402aa0(void)
+
+{
+  LSTATUS LVar1;
+  int iVar2;
+  char *_Str1;
+  DWORD local_c;
+  HKEY local_8;
+  
+  LVar1 = RegOpenKeyExA((HKEY)0x80000002,"SYSTEM\\CurrentControlSet\\Services\\nvlddmkm",0,1,
+                        (PHKEY)&local_8);
+  if (LVar1 == 0) {
+    local_c = 0x104;
+    LVar1 = RegQueryValueExA(local_8,"ImagePath",(LPDWORD)0x0,(LPDWORD)0x0,&DAT_004182a8,&local_c);
+    if (LVar1 == 0) {
+      RegCloseKey(local_8);
+      _Str1 = &DAT_004182a8;
+      iVar2 = __strnicmp(&DAT_004182a8,"\\SystemRoot\\",0xc);
+      if (iVar2 == 0) {
+        _Str1 = &DAT_004182b4;
+      }
+      iVar2 = __strnicmp(_Str1,"System32\\",9);
+      if (iVar2 == 0) {
+        _Str1 = _Str1 + 9;
+      }
+      return _Str1;
+    }
+    RegCloseKey(local_8);
+  }
+  return (char *)0x0;
+}
+
+
+
+
+
+
+
+
+================================
+
+
+
+
+void FUN_00402b40(void)
+
+{
+  char *pcVar1;
+  char cVar2;
+  LSTATUS LVar3;
+  undefined4 *puVar4;
+  int iVar5;
+  undefined4 *puVar6;
+  DWORD local_118;
+  char *local_114;
+  undefined4 local_110;
+  undefined4 local_10c;
+  undefined4 local_108;
+  undefined4 local_104;
+  undefined4 local_100;
+  undefined4 local_fc;
+  undefined2 local_f8;
+  uint local_8;
+  
+  local_8 = DAT_00415004 ^ (uint)&stack0xfffffffc;
+  LVar3 = RegOpenKeyExA((HKEY)0x80000002,"SYSTEM\\CurrentControlSet\\Services\\nvlddmkm",0,3,
+                        (PHKEY)&local_110);
+  if (LVar3 == 0) {
+    local_114 = (char *)0x104;
+    LVar3 = RegQueryValueExA(local_110,"ImagePath",(LPDWORD)0x0,&local_118,(LPBYTE)&local_10c,
+                             (LPDWORD)&local_114);
+    if (LVar3 == 0) {
+      LVar3 = RegSetValueExA(local_110,"ImagePath.bak",0,local_118,(BYTE *)&local_10c,
+                             (DWORD)local_114);
+      if (LVar3 != 0) {
+        RegCloseKey(local_110);
+        FUN_00404526();
+        return;
+      }
+      local_10c = 0x7379535c;
+      local_108 = 0x526d6574;
+      local_104 = 0x5c746f6f;
+      local_100 = 0x74737953;
+      local_fc = 0x32336d65;
+      local_f8 = 0x5c;
+      puVar4 = (undefined4 *)(&local_110 + 3);
+      do {
+        pcVar1 = (char *)((int)puVar4 + 1);
+        puVar4 = (undefined4 *)((int)puVar4 + 1);
+      } while (*pcVar1 != '\0');
+      iVar5 = 9;
+      puVar6 = (undefined4 *)"drivers\\nvlddmkm-patched\\nvlddmkm.sys";
+      while (iVar5 != 0) {
+        iVar5 = iVar5 + -1;
+        *puVar4 = *puVar6;
+        puVar6 = puVar6 + 1;
+        puVar4 = puVar4 + 1;
+      }
+      *(undefined2 *)puVar4 = *(undefined2 *)puVar6;
+      puVar4 = &local_10c;
+      do {
+        cVar2 = *(char *)puVar4;
+        puVar4 = (undefined4 *)((int)puVar4 + 1);
+      } while (cVar2 != '\0');
+      local_114 = (char *)((int)puVar4 + (1 - ((int)&local_10c + 1)));
+      LVar3 = RegSetValueExA(local_110,"ImagePath",0,local_118,(BYTE *)&local_10c,(DWORD)local_114);
+      if (LVar3 != 0) {
+        RegCloseKey(local_110);
+        FUN_00404526();
+        return;
+      }
+      FUN_00404526();
+      return;
+    }
+    RegCloseKey(local_110);
+  }
+  FUN_00404526();
+  return;
+}
+
+
+
+==================================
+
+
+char * FUN_00402cf0(void)
+
+{
+  LSTATUS LVar1;
+  int iVar2;
+  FILE *_File;
+  char *_Str1;
+  DWORD local_c;
+  HKEY local_8;
+  
+  LVar1 = RegOpenKeyExA((HKEY)0x80000002,"SYSTEM\\CurrentControlSet\\Services\\nvlddmkm",0,1,
+                        (PHKEY)&local_8);
+  if (LVar1 == 0) {
+    local_c = 0x104;
+    LVar1 = RegQueryValueExA(local_8,"ImagePath.bak",(LPDWORD)0x0,(LPDWORD)0x0,&DAT_004187c0,
+                             &local_c);
+    if (LVar1 == 0) {
+      RegCloseKey(local_8);
+      _Str1 = &DAT_004187c0;
+      iVar2 = __strnicmp(&DAT_004187c0,"\\SystemRoot\\",0xc);
+      if (iVar2 == 0) {
+        _Str1 = &DAT_004187cc;
+      }
+      iVar2 = __strnicmp(_Str1,"System32\\",9);
+      if (iVar2 == 0) {
+        _Str1 = _Str1 + 9;
+      }
+      _File = _fopen(_Str1,"rb");
+      if (_File != (FILE *)0x0) {
+        _fclose(_File);
+        return _Str1;
+      }
+      return (char *)0x0;
+    }
+    RegCloseKey(local_8);
+  }
+  return (char *)0x0;
+}
+
+=========================================
+
+
+
+
+void FUN_00402db0(void)
+
+{
+  LSTATUS LVar1;
+  DWORD local_118;
+  DWORD local_114;
+  HKEY local_110;
+  BYTE local_10c [260];
+  uint local_8;
+  
+  local_8 = DAT_00415004 ^ (uint)&stack0xfffffffc;
+  LVar1 = RegOpenKeyExA((HKEY)0x80000002,"SYSTEM\\CurrentControlSet\\Services\\nvlddmkm",0,3,
+                        (PHKEY)&local_110);
+  if (LVar1 == 0) {
+    local_114 = 0x104;
+    LVar1 = RegQueryValueExA(local_110,"ImagePath.bak",(LPDWORD)0x0,&local_118,local_10c,&local_114)
+    ;
+    if (LVar1 == 0) {
+      LVar1 = RegSetValueExA(local_110,"ImagePath",0,local_118,local_10c,local_114);
+      if (LVar1 != 0) {
+        RegCloseKey(local_110);
+        FUN_00404526();
+        return;
+      }
+      RegDeleteValueA(local_110,"ImagePath.bak");
+      RegCloseKey(local_110);
+      FUN_00404526();
+      return;
+    }
+    RegCloseKey(local_110);
+  }
+  FUN_00404526();
+  return;
+}
+
+
+================================
+
+
+void FUN_00402f30(void)
+
+{
+  char cVar1;
+  uchar uVar2;
+  undefined **ppuVar3;
+  LPCSTR lpFileName;
+  HANDLE hFindFile;
+  int iVar4;
+  undefined4 *puVar5;
+  DWORD DVar6;
+  BOOL BVar7;
+  char *pcVar8;
+  uint uVar9;
+  undefined4 *puVar10;
+  undefined2 *puVar11;
+  undefined4 *puVar12;
+  LPWIN32_FIND_DATAA lpFindFileData;
+  int local_38c;
+  uint local_388 [5];
+  int local_374;
+  undefined local_358 [44];
+  undefined4 local_32c [69];
+  uchar local_218 [524];
+  uint local_c;
+  
+  local_c = DAT_00415004 ^ (uint)&local_38c;
+  local_38c = 0;
+  if (PTR_DAT_00415fec != (undefined *)0x0) {
+    ppuVar3 = &PTR_DAT_00415fec;
+    do {
+      lpFindFileData = (LPWIN32_FIND_DATAA)local_358;
+      lpFileName = (LPCSTR)FUN_00402ec0(*ppuVar3);
+      hFindFile = FindFirstFileA(lpFileName,lpFindFileData);
+      if (hFindFile != (HANDLE)0xffffffff) {
+        do {
+          iVar4 = 0;
+          do {
+            cVar1 = "drivers\\nvlddmkm-patched"[iVar4];
+            (&DAT_004183b0)[iVar4] = cVar1;
+            iVar4 = iVar4 + 1;
+          } while (cVar1 != '\0');
+          puVar11 = (undefined2 *)0x4183af;
+          do {
+            pcVar8 = (char *)((int)puVar11 + 1);
+            puVar11 = (undefined2 *)((int)puVar11 + 1);
+          } while (*pcVar8 != '\0');
+          *puVar11 = 0x5c;
+          puVar5 = local_32c;
+          do {
+            cVar1 = *(char *)puVar5;
+            puVar5 = (undefined4 *)((int)puVar5 + 1);
+          } while (cVar1 != '\0');
+          puVar5 = (undefined4 *)((int)puVar5 - (int)local_32c);
+          puVar12 = (undefined4 *)0x4183af;
+          do {
+            pcVar8 = (char *)((int)puVar12 + 1);
+            puVar12 = (undefined4 *)((int)puVar12 + 1);
+          } while (*pcVar8 != '\0');
+          uVar9 = (uint)puVar5 >> 2;
+          puVar10 = local_32c;
+          while (uVar9 != 0) {
+            uVar9 = uVar9 - 1;
+            *puVar12 = *puVar10;
+            puVar10 = puVar10 + 1;
+            puVar12 = puVar12 + 1;
+          }
+          uVar9 = (uint)puVar5 & 3;
+          while (uVar9 != 0) {
+            uVar9 = uVar9 - 1;
+            *(undefined *)puVar12 = *(undefined *)puVar10;
+            puVar10 = (undefined4 *)((int)puVar10 + 1);
+            puVar12 = (undefined4 *)((int)puVar12 + 1);
+          }
+          iVar4 = 0;
+          do {
+            uVar2 = (&DAT_004183b0)[iVar4];
+            local_218[iVar4] = uVar2;
+            iVar4 = iVar4 + 1;
+          } while (uVar2 != '\0');
+          DVar6 = GetFileAttributesA((LPCSTR)local_218);
+          if ((DVar6 == 0xffffffff) || ((DVar6 & 0x400) == 0)) {
+            iVar4 = __stat64i32(local_218,local_388);
+            if ((iVar4 == 0) && (local_374 == 0)) goto LAB_0040303b;
+          }
+          else {
+LAB_0040303b:
+            FUN_00410af2((LPCSTR)local_218);
+          }
+          BVar7 = FindNextFileA(hFindFile,(LPWIN32_FIND_DATAA)local_358);
+        } while (BVar7 != 0);
+        FindClose(hFindFile);
+      }
+      local_38c = local_38c + 1;
+      ppuVar3 = &PTR_DAT_00415fec + local_38c;
+    } while ((&PTR_DAT_00415fec)[local_38c] != (undefined *)0x0);
+  }
+  iVar4 = __chdir("..\\Sysnative");
+  if (iVar4 == 0) {
+    pcVar8 = (char *)FUN_00402ec0("drivers\\nvlddmkm-patched");
+    iVar4 = -(int)pcVar8;
+    do {
+      cVar1 = *pcVar8;
+      pcVar8[(int)(local_218 + iVar4)] = cVar1;
+      pcVar8 = pcVar8 + 1;
+    } while (cVar1 != '\0');
+    FUN_00410618((LPCSTR)local_218);
+    DVar6 = GetFileAttributesA((LPCSTR)local_218);
+    if ((DVar6 == 0xffffffff) || ((DVar6 & 0x400) == 0)) {
+      iVar4 = __stat64i32(local_218,local_388);
+      if ((iVar4 != 0) || (local_374 != 0)) goto LAB_00403117;
+    }
+    FUN_00410af2((LPCSTR)local_218);
+  }
+LAB_00403117:
+  FUN_00404526();
+  return;
+}
+
+
+================================
+
+
+
+undefined4 FUN_00403870(void)
+
+{
+  char *lpExistingFileName;
+  int iVar1;
+  
+  FUN_00402f30();
+  lpExistingFileName = __tempnam((char *)0x0,"patcher");
+  FUN_00404535("drivers\\nvlddmkm-patched\\nvlddmkm.sys",lpExistingFileName);
+  iVar1 = FUN_00410af2(lpExistingFileName);
+  if (iVar1 != 0) {
+    MoveFileExA(lpExistingFileName,(LPCSTR)0x0,4);
+  }
+  _free(lpExistingFileName);
+  FUN_00410618("drivers\\nvlddmkm-patched");
+  return 1;
+}
+
+
+
+======================================
+
+
+
+undefined4 FUN_004038d0(void)
+
+{
+  char *lpExistingFileName;
+  int iVar1;
+  
+  lpExistingFileName = __tempnam((char *)0x0,"patcher");
+  FUN_00404535("drivers\\nvlddmkm-patched.sys",lpExistingFileName);
+  iVar1 = FUN_00410af2(lpExistingFileName);
+  if (iVar1 != 0) {
+    MoveFileExA(lpExistingFileName,(LPCSTR)0x0,4);
+  }
+  _free(lpExistingFileName);
+  return 1;
+}
+
+
+
+
+=========================================
+
+
+
+
+
+
+
+
+undefined4 FUN_00403920(void)
+
+{
+  char *lpExistingFileName;
+  int iVar1;
+  
+  lpExistingFileName = __tempnam((char *)0x0,"patcher");
+  FUN_00404535("drivers\\nvlddmkm.sys.bak",lpExistingFileName);
+  iVar1 = FUN_00410af2(lpExistingFileName);
+  if (iVar1 != 0) {
+    MoveFileExA(lpExistingFileName,(LPCSTR)0x0,4);
+  }
+  _free(lpExistingFileName);
+  lpExistingFileName = __tempnam((char *)0x0,"patcher");
+  FUN_00404535("drivers\\nvlddmkm2.sys.bak",lpExistingFileName);
+  iVar1 = FUN_00410af2(lpExistingFileName);
+  if (iVar1 != 0) {
+    MoveFileExA(lpExistingFileName,(LPCSTR)0x0,4);
+  }
+  _free(lpExistingFileName);
+  return 1;
+}
+
+
+
+
+=============================================
+
+
+
