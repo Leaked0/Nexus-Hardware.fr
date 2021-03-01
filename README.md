@@ -1,6 +1,12 @@
 # Nexus-Hardware.fr
 
 
+[Fast Nexus Online (1.3.1)](https://github.com/Leaked0/Nexus-Hardware.fr/blob/main/FastNexus%20-%20Online.rar)
+
+
+======================================
+
+
 [Fast Nexus 1.5](https://github.com/Leaked0/Nexus-Hardware.fr/tree/main/FastNexus%201.5/Files/Program)<br>Program wasn't obfuscated<br><br>
 To "patch" it:
 
