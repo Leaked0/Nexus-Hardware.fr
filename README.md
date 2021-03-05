@@ -1,6 +1,18 @@
 # Nexus-Hardware.fr
 
 
+=====
+
+
+https://anonfiles.com/Xcq5Xb86q3/FreeNexus_rar
+ 
+J'ai juste fais un peu le ménage dans le code(si les scripts ont un mauvais nom il vous suffira de les renommer)
+Mot de passe: `FreeNexus`
+
+
+=====
+
+
 [Fast Nexus Online (1.3.1)](https://github.com/Leaked0/Nexus-Hardware.fr/blob/main/FastNexus%20-%20Online.rar)
 
 
